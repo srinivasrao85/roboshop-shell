@@ -16,4 +16,3 @@ systemctl start catalogue
 cp configs/mongodb.repo /etc/yum.repos.d/mongo.repo
 yum install mongodb-org-shell -y
 mongo --host mongodb-dev.devopslearn12.store </app/schema/catalogue.js
-#comments are added
