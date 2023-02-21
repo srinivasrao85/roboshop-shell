@@ -1,2 +1,2 @@
-DATE=2023-02-17
+DATE=$(date)
 echo "Hello,Good Morning,Today date is ${DATE}"
