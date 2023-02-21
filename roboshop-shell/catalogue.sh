@@ -12,12 +12,12 @@ rm -rf /app/* &>>{log_file}
 print_head "Downloading app content"
 curl -L -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue.zip &>>{log_file}
 cd /app
-unzip /tmp/catalogue.zip
+unzip /tmp/catalogue.zip &>>{log_file}
 cd /app
 print_head "Installing Nodejs dependencies"
 npm install &>>{log_file}
 print_head "Copy Systemd installations"
-cp {pwd}/configs/catalogue.service /etc/systemd/system/catalogue.service &>>{log_file}
+cp {code_dir}/configs/catalogue.service /etc/systemd/system/catalogue.service &>>{log_file}
 print_head "deamon reload"
 systemctl daemon-reload &>>{log_file}
 print_head "enable catalogue"
@@ -26,7 +26,7 @@ print_head "Start catalogue"
 systemctl restart catalogue &>>{log_file}
 
 print_head "copy mongodb repofile"
-cp {pwd}/configs/mongodb.repo /etc/yum.repos.d/mongo.repo &>>{log_file}
+cp {code_dir}/configs/mongodb.repo /etc/yum.repos.d/mongo.repo &>>{log_file}
 print_head "start mongo client"
 yum install mongodb-org-shell -y &>>{log_file}
 print_head "mongo schema"
