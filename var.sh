@@ -5,5 +5,5 @@ echo "Hello,Good Morning,Today date is ${DATE}"
 ADD=$((2+3))
 echo "addition is ${ADD}"
 
-b = (10 20 30)
+b=(10 20 30)
 echo ${b[0]}
