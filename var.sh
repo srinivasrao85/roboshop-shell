@@ -7,3 +7,5 @@ echo "addition is ${ADD}"
 
 b=(10 20 30)
 echo "${b[0]}"
+
+echo x = $x
