@@ -13,4 +13,4 @@ echo Hello world
 # \e[0m -> Zero code is going to reset the color,Meaning if we enable color for sure we need to disable it ,other wise color will continue on screen
 
 echo -e "\e[31m Hello in Red Color"
-echo echo World
+echo Hello World
